@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useAppContext } from "../../contest/Store";
 
 function Home() {
-    return <div></div>;
+    const {} = useAppContext();
+
+    return <div>Home name</div>;
 }
 
 export default Home;

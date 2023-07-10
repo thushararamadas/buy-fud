@@ -1,10 +1,13 @@
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRouter from "./components/routing/routers/AppRouter";
+import { Provider } from "./contest/Store";
 
 function App() {
     return (
-        <div className="App">
-            <h1>welcome thushara :)</h1>
-        </div>
+        <Router>
+            <AppRouter />
+        </Router>
     );
 }
 
