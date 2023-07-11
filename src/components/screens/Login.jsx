@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import FromRow from "../includes/FromRow";
 
 function Login() {
-    return <div>login</div>;
+    const userDetails = useState({
+        name: "",
+        email: "",
+        password: "",
+    });
+    return (
+        <div>
+            <FromRow name="email" />
+        </div>
+    );
 }
 
 export default Login;
