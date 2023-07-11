@@ -1,11 +1,13 @@
 import "./App.css";
-import Home from "./components/screens/Home";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRouter from "./components/routing/routers/AppRouter";
+import { Provider } from "./contest/Store";
 
 function App() {
     return (
-        <>
-            <Home />
-        </>
+        <Router>
+            <AppRouter />
+        </Router>
     );
 }
 
