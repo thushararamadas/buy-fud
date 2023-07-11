@@ -1,4 +1,6 @@
 import React from "react";
+import { styled } from "styled-components";
+import Header from "../includes/Header";
 
 function Home() {
     return (
