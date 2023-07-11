@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useAppContext } from "../../contest/Store";
+import { useAppContext } from "../../context/Store";
 
 function Home() {
     const {} = useAppContext();
