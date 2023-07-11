@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import FromRow from "../includes/FromRow";
+import { useAppContext } from "../../context/Store";
 
 function Login() {
     const [userDetails, setUserDetails] = useState({
         userName: "",
         password: "",
     });
+    const navigate = useNavigate();
+
+    const { loginUser, token } = useAppContext();
 
     const handleChange = (e) => {
         setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
@@ -14,7 +20,17 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(userDetails);
+        const { userName, password } = userDetails;
+        if (userName && password) {
+            loginUser(userDetails);
+        }
     };
+
+    useEffect(() => {
+        if (token) {
+            navigate("/");
+        }
+    }, [token, navigate]);
 
     return (
         <div>

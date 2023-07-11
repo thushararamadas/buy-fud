@@ -1,8 +1,18 @@
+import {
+    SETUP_USER_BEGIN,
+    SETUP_USER_ERORR,
+    SETUP_USER_SUCCESS,
+} from "./actions";
+
 export const reducer = (state, action) => {
     switch (action.type) {
-        case "o":
-            return { ...state, ...action.payload };
+        case SETUP_USER_BEGIN:
+            return { ...state, loading: true };
 
+        case SETUP_USER_SUCCESS:
+            return { ...state, token: action.payload.token, loading: false };
+        case SETUP_USER_ERORR:
+            return { ...state, error: action.payload.message, loading: false };
         default:
             return { ...state };
     }
