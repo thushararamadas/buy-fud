@@ -6,12 +6,12 @@ import { useAppContext } from "../../context/Store";
 
 function Login() {
     const [userDetails, setUserDetails] = useState({
-        userName: "",
-        password: "",
+        userName: "mor_2314",
+        password: "83r5^_",
     });
     const navigate = useNavigate();
 
-    const { loginUser, token } = useAppContext();
+    const { loading, loginUser, token } = useAppContext();
 
     const handleChange = (e) => {
         setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
@@ -48,7 +48,9 @@ function Login() {
                     handleChange={handleChange}
                     value={userDetails.password}
                 />
-                <button type="submit">Submit</button>
+                <button disabled={loading} type="submit">
+                    Submit
+                </button>
             </form>
         </div>
     );
