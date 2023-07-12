@@ -13,6 +13,11 @@ export const reducer = (state, action) => {
             return { ...state, token: action.payload.token, loading: false };
         case SETUP_USER_ERORR:
             return { ...state, error: action.payload.message, loading: false };
+        case "CART_DATA":
+            return {
+                ...state,
+                cartdata: action.cartdata,
+            };
         default:
             return { ...state };
     }

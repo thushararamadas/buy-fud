@@ -13,6 +13,7 @@ const initialState = {
     loading: false,
     isLogedIn: false,
     token: token || "",
+    cartdata:[]
 };
 
 const AppContext = createContext(initialState);
@@ -24,10 +25,10 @@ export const Provider = ({ children }) => {
         baseURL: "https://fakestoreapi.com",
     });
 
-    const loginUser = async ({ userName, password }) => {
+    const loginUser = ({ userName, password }) => {
         dispatch({ type: SETUP_USER_BEGIN });
         try {
-            const res = await authFetch.post("/auth/login", {
+            const res = authFetch.post("/auth/login", {
                 username: userName,
                 password: password,
             });

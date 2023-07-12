@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Header from "../includes/Header";
+import Products from "./Products";
 
 function Home() {
     return (
@@ -92,13 +93,15 @@ function Home() {
                     <img src={require("../../assets/blur2.png")} alt="Image" />
                 </BoxTwo>
             </MainContainer>
+            <Products />
         </>
     );
 }
 
 export default Home;
 const MainContainer = styled.div`
-    /* position: relative   ; */
+    /* position: relative; */
+    height: 100vh;
 `;
 const TopContainer = styled.div`
     margin-top: 60px;
